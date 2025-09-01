@@ -1,0 +1,48 @@
+spring:
+  jackson:
+    time-zone: Asia/Seoul
+
+  main:
+    allow-bean-definition-overriding: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      jdbc:
+        time_zone: Asia/Seoul
+      ddl-auto: update
+
+  logging:
+    level:
+      root: DEBUG
+
+redis:
+  host: redis
+  port: 6379
+
+openai:
+  api-key: ${CHATGPT_API_KEY}
+  model: "gpt-4o-mini"
+  temperature: 0.7
+  maxTokens: 4096
+
+spotify:
+  base-url: ${SPOTIFY_BASE_URL}
+  token: ${SPOTIFY_TOKEN}
+
+youtube:
+  base-url: ${YOUTUBE_BASE_URL}
+  token: ${YOUTUBE_TOKEN}"
